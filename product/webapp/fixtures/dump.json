@@ -1,0 +1,75 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Чипсы",
+    "description": "с сыром",
+    "category": "food",
+    "remainder": 1,
+    "price": "105.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "туфли",
+    "description": "красные с блесками",
+    "category": "clothes",
+    "remainder": 1,
+    "price": "4000.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "ручка",
+    "description": "гелевая",
+    "category": "stationary",
+    "remainder": 2,
+    "price": "10.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "пудра",
+    "description": "с мицеляркой",
+    "category": "cosmetics",
+    "remainder": 3,
+    "price": "450.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "покрывало",
+    "description": "для дивана",
+    "category": "other",
+    "remainder": 1,
+    "price": "1556.00"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$GYW2yKpWU9Ks$wHSkYKjaoVt1PsksoBrljCV5jUR+RFPBI88bTlW8PRQ=",
+    "last_login": "2021-03-04T15:10:49.000Z",
+    "is_superuser": true,
+    "username": "aijan",
+    "first_name": "",
+    "last_name": "",
+    "email": "aijan@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-03-04T15:10:22.573Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
