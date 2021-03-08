@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block menu %}<li><a href="{% url "list" update.id %}">Вернуться к статье</a></li>{% endblock menu %}
+{% block page_header %}Редактирвоать статью {{ update.id }}{% endblock page_header %}
+
+{% block content %}
+    <div class="container">
+        <h1 align="center">Edit task</h1>
+        <form action="{% url "update" update.id %}" method="post">
+        {% csrf_token %}
+        {% include "form_for_prod.html" with button_text="Edit task" %}
+    <form/>
+    <div/> <br>
+
+{% endblock content %}

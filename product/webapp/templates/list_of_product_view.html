@@ -8,12 +8,14 @@
     </nav>
      <table class="table">
         <thead class="thead-dark">
-        <tr>
-            <th>Название товара: </th>
-            <th>Цена товара: </th>
-            <th>Категория: </th>
-        </tr>
+            <tr>
+                <th>Название товара: </th>
+                <th>Цена товара: </th>
+                <th>Категория: </th>
+                <th></th>
+            </tr>
         </thead>
+
 
         <tbody>
             {% for product in list_product %}
@@ -21,10 +23,35 @@
                 <td >
                     <a href="{% url "product-view" product.id %}">{{ product.name }}</a>
                 </td>
-
+                
                 <td>{{ product.price}}</td>
 
                 <td>{{ product.get_category_display }}</td>
+
+                <td>
+                    <a class="pr-5" href="{% url 'update' product.id %}"><li style="font-size: 20px" class="fa fa-pencil "></li></a>
+                    <a data-toggle="modal" data-target="#removeModal_{{ product.id }}" href="{% url 'delete' product.id %}"><li style="font-size: 20px" class="fa fa-ban"></li></a>
+                            <!-- Modal -->
+                          <div class="modal fade" id="removeModal_{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                          <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Удаление</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                          </div>
+                                          <div class="modal-body">
+                                                Вы действительно хотите удалить?
+                                           </div>
+                                          <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+                                                <a type="button" class="btn btn-danger" href="{% url 'delete' product.id %}">Да</a>
+                                          </div>
+                                    </div>
+                              </div>
+                          </div>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
