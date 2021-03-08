@@ -1,3 +1,4 @@
+
 [
 {
   "model": "webapp.product",
@@ -29,18 +30,7 @@
     "description": "гелевая",
     "category": "stationary",
     "remainder": 2,
-    "price": "10.00"
-  }
-},
-{
-  "model": "webapp.product",
-  "pk": 4,
-  "fields": {
-    "name": "пудра",
-    "description": "с мицеляркой",
-    "category": "cosmetics",
-    "remainder": 3,
-    "price": "450.00"
+    "price": "1000.00"
   }
 },
 {
@@ -55,11 +45,33 @@
   }
 },
 {
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "сумка",
+    "description": "кожанная",
+    "category": "other",
+    "remainder": 6,
+    "price": "5688.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 10,
+  "fields": {
+    "name": "пудра",
+    "description": "с мицеляркой",
+    "category": "cosmetics",
+    "remainder": 3,
+    "price": "45089.00"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$GYW2yKpWU9Ks$wHSkYKjaoVt1PsksoBrljCV5jUR+RFPBI88bTlW8PRQ=",
-    "last_login": "2021-03-04T15:10:49.000Z",
+    "last_login": "2021-03-04T15:10:49Z",
     "is_superuser": true,
     "username": "aijan",
     "first_name": "",
