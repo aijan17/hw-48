@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <h1 align="center ">Create Task</h1>
+        <form action="/add/"  method="post">
+            {% csrf_token %}
+            {% include "form_for_prod.html" with button_text="Create task" %}<br>
+        </form>
+    </div><br>
+
+{% endblock content %}
