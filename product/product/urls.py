@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from webapp.views import list_of_product_view, product_view, get_queryset
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', list_of_product_view, name='list-view'),
+    path('product/<int:id>', product_view, name='product-view'),
+    path('search/', get_queryset, name='search')
 ]
