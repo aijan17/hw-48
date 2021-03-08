@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+     <div >
+        <h3 align="center">Товар {{ products.id }}</h3>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th>Название товара: </th>
+                <th>Описание: </th>
+                <th>Цена товара: </th>
+                <th>Категория: </th>
+                <th>Остаток: </th>
+            </tr>
+            </thead>
+
+            <tbody>
+                    <tr class="bg-primary">
+                        <td class="bg-primary">
+                            {{ products.name }}
+                        </td>
+                        <td class="bg-success">
+                            {{ products.description }}
+                        </td>
+                        <td class="bg-warning">
+                            {{ products.price  }}
+                        </td>
+                        <td class="bg-danger">
+                            {{ products.get_category_display  }}
+                        </td>
+                        <td class="bg-info">
+                            {{ products.remainder  }}
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+
+     </div>
+
+{% endblock content %}

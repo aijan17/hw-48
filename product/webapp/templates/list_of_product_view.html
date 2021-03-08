@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <nav class="navbar navbar-light bg-light">
+          <form method="GET" action="/search/" id="searchform">
+              <input class="searchfield" id="searchbox" name="query" type="text" value="{{ request.GET.query }}" placeholder="Search..."/>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+    </nav>
+     <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Название товара: </th>
+            <th>Цена товара: </th>
+            <th>Категория: </th>
+        </tr>
+        </thead>
+
+        <tbody>
+            {% for product in list_product %}
+            <tr class="table-light">
+                <td >
+                    <a href="{% url "product-view" product.id %}">{{ product.name }}</a>
+                </td>
+
+                <td>{{ product.price}}</td>
+
+                <td>{{ product.get_category_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}
