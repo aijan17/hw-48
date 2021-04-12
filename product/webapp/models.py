@@ -23,3 +23,24 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = "продукты"
+
+
+class Basket(models.Model):
+    product = models.ForeignKey(Product,related_name='baskets',on_delete=models.DO_NOTHING)
+    amount = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        verbose_name = 'Товар в корзине'
+        verbose_name_plural = "Товары в корзине"
+
+
+class Order(models.Model):
+    goods = models.ManyToManyField(Product,related_name='orders')
+    username = models.CharField(max_length=200, blank=False,null=False)
+    telephone = models.CharField(max_length=200, blank=False,null=False)
+    adress = models.CharField(max_length=200, blank=False,null=False)
+    datetimes = models.DateTimeField('date',auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = "Заказы"
