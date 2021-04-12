@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
     <nav class="navbar navbar-light bg-light">
-          <form method="GET" action="/search/" id="searchform">
-              <input class="searchfield" id="searchbox" name="query" type="text" value="{{ request.GET.query }}" placeholder="Search..."/>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <form class="form-inline" action="" method="GET">
+
+                <div class="form-group  mt-4 mb-3">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input type="text" name="query" class="form-control" id="inputPassword2" placeholder="Text" >
+                </div>
+                <button type="submit" class="btn btn-primary mt-4 mb-3 ml-3 ">
+                    Search
+                </button>
           </form>
+
     </nav>
      <table class="table">
         <thead class="thead-dark">
@@ -13,12 +20,13 @@
                 <th>Цена товара: </th>
                 <th>Категория: </th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
-
-
         <tbody>
+
             {% for product in list_product %}
+
             <tr class="table-light">
                 <td >
                     <a href="{% url "product-view" product.id %}">{{ product.name }}</a>
@@ -51,6 +59,11 @@
                                     </div>
                               </div>
                           </div>
+                </td>
+                <td>
+                    <button  type="button"  class="btn btn-dark ml-3">
+                          <a href="{% url 'basket' product.id %}">Добавить в корзину</a>
+                    </button>
                 </td>
             </tr>
             {% endfor %}
