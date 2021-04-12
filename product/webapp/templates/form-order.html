@@ -1,0 +1,11 @@
+
+{% block content %}
+{% csrf_token %}
+
+    <div class="container">
+        <form action="/order/"  method="post">
+            {% csrf_token %}
+            {% include "form_for_prod.html" with button_text="Checkout" %}<br>
+        </form>
+    </div><br>
+{% endblock content %}

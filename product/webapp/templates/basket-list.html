@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <table class="table mt-2 mb-5">
+
+        <thead class="thead-dark ">
+            <tr>
+                <th>Название  </th>
+                <th>Цена </th>
+                <th>Кол-во </th>
+                <th>Сумма</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for basket in baskets %}
+            <tr class="table-light">
+                <td >
+                    <a href="{% url "product-view" basket.b.product.id %}">{{ basket.b.product.name }}</a>
+                </td>
+                <td>
+                    {{ basket.b.product.price}}
+                </td>
+                <td>
+                    {{ basket.b.amount }}
+                </td>
+                <td>
+                      {{ basket.total }}
+                </td>
+                <td>
+                    <a type="button"  class="btn btn-danger" href="{% url 'del-basket' basket.b.id %}">Удалить</a>
+                </td>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <hr/>
+    <div class="mt-3 mr-5 text-right">
+        {% include 'form-order.html' %}
+    </div>
+
+{% endblock content %}

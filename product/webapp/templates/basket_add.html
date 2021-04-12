@@ -1,0 +1,38 @@
+{#{% extends 'base.html' %}#}
+{#{% block content %}#}
+{##}
+{#    <table class="table mt-3 mb-5">#}
+{#        <thead class="thead-dark ">#}
+{#            <tr>#}
+{#                <th>Название  </th>#}
+{#                <th>Цена </th>#}
+{#                <th>Кол-во </th>#}
+{#                <th>Сумма</th>#}
+{#                <th></th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            {% for basket in basket-list %}#}
+{#            <tr class="table-light">#}
+{#                <td >#}
+{#                    <a href="{% url "product-view" basket.product.id %}">{{ basket.product.name }}</a>#}
+{#                </td>#}
+{#                <td>#}
+{#                    {{ basket.product.price}}#}
+{#                </td>#}
+{#                <td>#}
+{#                    {{ basket.amount }}#}
+{#                </td>#}
+{#                <td>#}
+{#                {% for object in object_list %}#}
+{#                      {{ obj.difference }}#}
+{#                {% endfor %}#}
+{#                </td>#}
+{#                <td>#}
+{#                    <a type="button" class="btn btn-danger" href="{% url 'delete' basket.id %}">Удалить</a>#}
+{#                </td>#}
+{##}
+{#            {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{#{% endblock content %}#}
